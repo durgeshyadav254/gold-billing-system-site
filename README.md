@@ -1,36 +1,77 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# RiseGold Marketing Site
 
-## Getting Started
+Static Next.js 15 website for selling **RiseGold** jewellery billing software.
 
-First, run the development server:
+- Folder: `gold-billing-system-site`
+- Deploy: **Vercel** (static export)
+- Sales: WhatsApp **7054392173** + lead forms that open WhatsApp
+
+## Local development
 
 ```bash
+cd gold-billing-system-site
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Host the Windows installer
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Copy your built installer to:
 
-## Learn More
+   `public/downloads/RiseGold-Setup.exe`
 
-To learn more about Next.js, take a look at the following resources:
+2. Or host the file on Google Drive / Cloudflare R2 / S3 and set:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+NEXT_PUBLIC_DOWNLOAD_URL=https://your-cdn.com/RiseGold-Setup.exe
+NEXT_PUBLIC_SITE_URL=https://your-domain.com
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Buyers who have not paid yet are guided to WhatsApp. After payment you send them the download link (or unlock the public `/download/` page).
+
+## Sales flow
+
+1. Customer opens **/buy/** or floating WhatsApp button.
+2. They chat on WhatsApp (`wa.me/917054392173`) or submit the form (pre-filled WhatsApp message).
+3. You share UPI/bank details → confirm payment → send installer URL.
+
+## Build (static)
+
+```bash
+npm run build
+```
+
+Output is in `out/` — pure static HTML/CSS/JS.
 
 ## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Push this folder to GitHub (or import the monorepo and set **Root Directory** to `gold-billing-system-site`).
+2. Framework Preset: Next.js
+3. Build Command: `npm run build`
+4. Output: Next.js will use `output: "export"` → Vercel serves `out/`
+5. Add env vars if needed: `NEXT_PUBLIC_SITE_URL`, `NEXT_PUBLIC_DOWNLOAD_URL`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Or CLI:
+
+```bash
+npx vercel
+```
+
+## Pages
+
+| Path | Purpose |
+|------|---------|
+| `/` | Luxury homepage + product pitch |
+| `/features` | All product features |
+| `/pricing` | Licence + support pricing |
+| `/buy` | WhatsApp buy + form |
+| `/download` | Installer download + requirements |
+| `/contact` | Sales contact form |
+| `/about` | About RiseGold |
+| `/privacy` `/terms` | Legal |
+
+## Change price / WhatsApp
+
+Edit `lib/site.ts` — `SITE.whatsapp`, `SITE.price`, etc.
