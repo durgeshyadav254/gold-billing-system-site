@@ -37,28 +37,26 @@ Buyers who have not paid yet are guided to WhatsApp. After payment you send them
 2. They chat on WhatsApp (`wa.me/917054392173`) or submit the form (pre-filled WhatsApp message).
 3. You share UPI/bank details → confirm payment → send installer URL.
 
-## Build
+## Build (static export → `out/`)
 
 ```bash
 npm run build
-npm start
 ```
-
-Pages are statically generated (SSG). Deploy with the **Next.js** preset on Vercel — do **not** set Output Directory to `out`.
 
 ## Deploy on Vercel
 
-1. Push to GitHub and import the project.
-2. Framework: **Next.js** (auto)
-3. Build Command: `npm run build` (default)
-4. Output Directory: **leave empty** (default `.next`) — clear it if it was set to `out`
-5. Optional env: `NEXT_PUBLIC_SITE_URL`, `NEXT_PUBLIC_DOWNLOAD_URL`
+This project uses **static export**. In Vercel project settings:
 
-Or CLI:
+| Setting | Value |
+|--------|--------|
+| Framework Preset | **Other** (not Next.js) |
+| Build Command | `npm run build` |
+| Output Directory | `out` |
+| Install Command | `npm install` |
 
-```bash
-npx vercel
-```
+`vercel.json` already sets `framework: null` and `outputDirectory: out`.
+
+Optional env: `NEXT_PUBLIC_SITE_URL`, `NEXT_PUBLIC_DOWNLOAD_URL`
 
 ## Pages
 
