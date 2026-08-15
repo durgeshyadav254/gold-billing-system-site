@@ -1,8 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Static HTML export — drop on Vercel or any static host
-  output: "export",
+  // Deploy as standard Next.js on Vercel (all pages are still static SSG).
+  // Do NOT set output: "export" — that breaks Vercel's Next.js builder.
   images: {
     unoptimized: true,
   },

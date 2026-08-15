@@ -37,21 +37,22 @@ Buyers who have not paid yet are guided to WhatsApp. After payment you send them
 2. They chat on WhatsApp (`wa.me/917054392173`) or submit the form (pre-filled WhatsApp message).
 3. You share UPI/bank details → confirm payment → send installer URL.
 
-## Build (static)
+## Build
 
 ```bash
 npm run build
+npm start
 ```
 
-Output is in `out/` — pure static HTML/CSS/JS.
+Pages are statically generated (SSG). Deploy with the **Next.js** preset on Vercel — do **not** set Output Directory to `out`.
 
 ## Deploy on Vercel
 
-1. Push this folder to GitHub (or import the monorepo and set **Root Directory** to `gold-billing-system-site`).
-2. Framework Preset: Next.js
-3. Build Command: `npm run build`
-4. Output: Next.js will use `output: "export"` → Vercel serves `out/`
-5. Add env vars if needed: `NEXT_PUBLIC_SITE_URL`, `NEXT_PUBLIC_DOWNLOAD_URL`
+1. Push to GitHub and import the project.
+2. Framework: **Next.js** (auto)
+3. Build Command: `npm run build` (default)
+4. Output Directory: **leave empty** (default `.next`) — clear it if it was set to `out`
+5. Optional env: `NEXT_PUBLIC_SITE_URL`, `NEXT_PUBLIC_DOWNLOAD_URL`
 
 Or CLI:
 
