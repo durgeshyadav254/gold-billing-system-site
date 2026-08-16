@@ -45,7 +45,7 @@ export function Navbar() {
             <Link
               key={l.href}
               href={l.href}
-              className="link-luxury text-sm font-medium text-muted transition hover:text-ink"
+              className="link-luxury text-sm font-bold text-muted transition hover:text-ink"
             >
               {l.label}
             </Link>
@@ -77,7 +77,7 @@ export function Navbar() {
               <Link
                 key={l.href}
                 href={l.href}
-                className="rounded-lg px-2 py-2 text-sm font-medium text-ink"
+                className="rounded-lg px-2 py-2 text-sm font-bold text-ink"
                 onClick={() => setOpen(false)}
               >
                 {l.label}

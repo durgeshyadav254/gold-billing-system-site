@@ -5,7 +5,7 @@ import { ArrowDownToLine, Gem, MessageCircle, ShieldCheck, X } from "lucide-reac
 import { SITE, whatsappLink } from "@/lib/site";
 
 const paidMessage =
-  "Hi, I paid for RiseGold. Please send my installer download link.";
+  "Hi, I paid for RiseGold. Please send my installer download link and RGB1 licence key.";
 
 export function InstallerVault() {
   const [open, setOpen] = useState(false);
@@ -32,24 +32,26 @@ export function InstallerVault() {
     <>
       <div className="gold-corners relative mt-12 overflow-hidden rounded-[1.75rem] border border-gold/35 bg-paper shadow-[0_24px_48px_-28px_rgba(122,95,44,0.35)]">
         <div className="absolute inset-y-0 left-0 w-1.5 bg-gradient-to-b from-gold-light via-gold to-gold-deep" />
-        <span className="absolute top-0 right-8 -translate-y-1/2 rounded-full border border-gold/40 bg-gradient-to-r from-gold-soft to-gold-200 px-3.5 py-1 text-[10px] font-semibold tracking-[0.18em] text-gold-deep uppercase">
-          Shop PC build
-        </span>
 
-        <div className="px-6 pt-10 pb-7 sm:px-8">
-          <div className="flex items-center gap-4">
-            <span className="flex h-12 w-12 items-center justify-center rounded-2xl border border-gold/30 bg-gold-soft text-gold-deep">
-              <Gem size={22} aria-hidden />
-            </span>
-            <div>
-              <p className="font-display text-2xl font-semibold text-ink">
-                {SITE.name} Billing
-              </p>
-              <p className="mt-0.5 text-sm text-muted">
-                {SITE.installer.edition} · v{SITE.installer.version} ·{" "}
-                {SITE.installer.arch}
-              </p>
+        <div className="px-6 pt-7 pb-7 sm:px-8">
+          <div className="flex items-start justify-between gap-4">
+            <div className="flex items-center gap-4">
+              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-gold/30 bg-gold-soft text-gold-deep">
+                <Gem size={22} aria-hidden />
+              </span>
+              <div>
+                <p className="font-display text-2xl font-semibold text-ink">
+                  {SITE.name} Billing
+                </p>
+                <p className="mt-0.5 text-sm text-muted">
+                  Trial starts on first launch · v{SITE.installer.version} ·{" "}
+                  {SITE.installer.arch}
+                </p>
+              </div>
             </div>
+            <span className="shrink-0 rounded-full border border-gold/40 bg-gradient-to-r from-gold-soft to-gold-200 px-3.5 py-1 text-[10px] font-semibold tracking-[0.18em] text-gold-deep uppercase">
+              {SITE.trialDays}-day trial
+            </span>
           </div>
 
           <button
@@ -58,7 +60,7 @@ export function InstallerVault() {
             className="btn-shine btn-gold-metal mt-7 flex w-full items-center justify-center gap-2.5 rounded-2xl px-5 py-4 text-sm font-semibold"
           >
             <ArrowDownToLine size={18} aria-hidden />
-            Collect shop installer
+            Download {SITE.trialDays}-day trial
           </button>
 
           <ul className="mt-5 flex flex-wrap gap-2">
@@ -89,8 +91,8 @@ export function InstallerVault() {
       </div>
 
       <p className="mt-3 text-center text-xs text-muted">
-        First launch may show a Windows publisher check — we explain it before
-        the file starts.
+        No licence key for the trial. After you buy, paste the RGB1 key under
+        Settings → License. First launch may show a Windows publisher check.
       </p>
 
       {open && (
@@ -197,7 +199,7 @@ export function InstallerVault() {
                 className="btn-shine btn-gold-metal inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold"
               >
                 <ArrowDownToLine size={16} aria-hidden />
-                Continue to setup file
+                Continue to trial file
               </a>
             </div>
           </div>

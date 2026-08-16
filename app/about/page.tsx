@@ -32,8 +32,10 @@ export default function AboutPage() {
           </p>
           <p>
             Your data lives on your laptop. You print A4 tax invoices, back up
-            with one click, and export reports your CA can use. When you buy a
-            licence, we deliver the installer and help you set up over WhatsApp.
+            locally with one click, and export reports your CA can use. A
+            30-day trial starts on first install. When you buy a Shop Licence,
+            we send an RGB1 key on WhatsApp — optional Cloud Protect can ride
+            on the same key.
           </p>
           <div className="rounded-2xl border border-gold/30 bg-gradient-to-r from-gold-soft/50 to-canvas p-8">
             <p className="mb-3 text-xs font-bold tracking-widest text-gold-deep uppercase">
@@ -45,8 +47,11 @@ export default function AboutPage() {
             </p>
           </div>
         </div>
-        <div className="mt-12">
-          <ButtonLink href="/buy/">Buy a shop licence</ButtonLink>
+        <div className="mt-12 flex flex-wrap gap-3">
+          <ButtonLink href="/download/">Start 30-day trial</ButtonLink>
+          <ButtonLink href="/buy/" variant="outline">
+            Buy a shop licence
+          </ButtonLink>
         </div>
       </div>
     </div>

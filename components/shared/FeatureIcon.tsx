@@ -7,6 +7,8 @@ import {
   WifiOff,
   ArrowLeftRight,
   MessageCircle,
+  Cloud,
+  Calculator,
   type LucideIcon,
 } from "lucide-react";
 
@@ -19,6 +21,8 @@ const map: Record<string, LucideIcon> = {
   wifi: WifiOff,
   exchange: ArrowLeftRight,
   message: MessageCircle,
+  cloud: Cloud,
+  calculator: Calculator,
 };
 
 export function FeatureIcon({

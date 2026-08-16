@@ -29,10 +29,14 @@ export function Footer() {
             </p>
           </div>
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/60">
-            Premium offline jewellery billing for Indian gold shops — GST
-            invoices, inventory, rates & reports.
+            Offline jewellery billing for Indian gold shops — 30-day trial, then
+            a one-time Shop Licence. GST invoices, inventory, rates & reports.
           </p>
           <div className="mt-6 flex flex-wrap gap-4">
+            <span className="flex items-center gap-1.5 text-xs text-gold-light">
+              <span className="h-1.5 w-1.5 rounded-full bg-gold-light" />
+              30-day trial
+            </span>
             <span className="flex items-center gap-1.5 text-xs text-gold-light">
               <span className="h-1.5 w-1.5 rounded-full bg-gold-light" />
               GST Ready

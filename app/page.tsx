@@ -28,19 +28,21 @@ export default function HomePage() {
               </span>
             </h1>
             <p className="animate-rise delay-2 mt-7 max-w-xl text-base leading-relaxed text-white/70 sm:text-lg">
-              GST-compliant offline software for gold shops. Accurate invoices,
-              inventory, rates & reports — on one Windows laptop. No monthly
+              GST-compliant offline software for gold shops. Try 30 days free
+              on one Windows laptop — then a one-time Shop Licence. No monthly
               cloud fee.
             </p>
             <div className="animate-rise delay-3 mt-9 flex flex-wrap gap-3">
-              <ButtonLink href="/buy/">Buy licence · {SITE.price}</ButtonLink>
-              <ButtonLink href={whatsappLink()} variant="ghost" external>
-                WhatsApp {SITE.whatsapp}
+              <ButtonLink href="/download/">
+                Start 30-day trial
+              </ButtonLink>
+              <ButtonLink href="/buy/" variant="ghost">
+                Buy licence · {SITE.price}
               </ButtonLink>
             </div>
             <ul className="animate-rise delay-4 mt-10 flex flex-wrap gap-3">
               {[
-                "100% Offline",
+                "30-day free trial",
                 "GST Ready",
                 "Windows 10/11",
               ].map((item) => (
@@ -182,8 +184,8 @@ export default function HomePage() {
           <SectionHeader
             light
             eyebrow="Start today"
-            title="Buy → Install → Bill"
-            subtitle="Installer delivered after payment confirmation on WhatsApp."
+            title="Install → Bill → Activate"
+            subtitle="Trial starts on first launch. Buy a Shop Licence when you are ready — we send an RGB1 key on WhatsApp."
           />
           <div className="mt-14 grid gap-6 md:grid-cols-3">
             {STEPS.map((s) => (
@@ -204,8 +206,8 @@ export default function HomePage() {
             ))}
           </div>
           <div className="mt-12 flex justify-center">
-            <ButtonLink href="/buy/" variant="gold">
-              Get the installer
+            <ButtonLink href="/download/" variant="gold">
+              Download the trial
             </ButtonLink>
           </div>
         </div>
@@ -234,12 +236,12 @@ export default function HomePage() {
         <div className="mx-auto max-w-3xl px-4 text-center sm:px-6">
           <SectionHeader
             eyebrow="Pricing"
-            title={`${SITE.price} one-time`}
+            title={`${SITE.trialDays}-day trial, then ${SITE.price}`}
             subtitle={SITE.priceNote}
           />
           <div className="gold-rule mt-6" />
           <div className="mt-10 flex flex-wrap justify-center gap-3">
-            <ButtonLink href="/buy/">Buy on WhatsApp</ButtonLink>
+            <ButtonLink href="/download/">Start free trial</ButtonLink>
             <ButtonLink href="/pricing/" variant="outline">
               Compare plans
             </ButtonLink>
@@ -249,7 +251,7 @@ export default function HomePage() {
 
       <section className="border-t border-line bg-paper py-24">
         <div className="mx-auto max-w-3xl px-4 sm:px-6">
-          <SectionHeader eyebrow="FAQ" title="Before you buy" />
+          <SectionHeader eyebrow="FAQ" title="Trial, licence & keys" />
           <div className="mt-12 space-y-4">
             {FAQS.map((f) => (
               <details
@@ -286,15 +288,15 @@ export default function HomePage() {
           </h2>
           <div className="gold-rule mt-6" />
           <p className="mt-6 text-lg text-white/60">
-            Message {SITE.whatsapp} — we send payment details and the installer
-            link.
+            Download the 30-day trial, or message {SITE.whatsapp} for a Shop
+            Licence key and payment details.
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
-            <ButtonLink href={whatsappLink()} external variant="gold">
-              Open WhatsApp
+            <ButtonLink href="/download/" variant="gold">
+              Start free trial
             </ButtonLink>
-            <ButtonLink href="/contact/" variant="ghost">
-              Fill the form
+            <ButtonLink href={whatsappLink()} external variant="ghost">
+              Buy on WhatsApp
             </ButtonLink>
           </div>
         </div>

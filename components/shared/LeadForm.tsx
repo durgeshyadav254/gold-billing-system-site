@@ -18,7 +18,7 @@ export function LeadForm({ intent = "buy" }: Props) {
     e.preventDefault();
     const lines = [
       intent === "buy"
-        ? `Hi RiseGold, I want to BUY ${SITE.name} (${SITE.price}).`
+        ? `Hi RiseGold, I want to BUY ${SITE.name} Shop Licence (${SITE.price}). Please send UPI details and an RGB1 key.`
         : intent === "demo"
           ? `Hi RiseGold, I want a demo of ${SITE.name}.`
           : `Hi RiseGold, I need support for ${SITE.name}.`,

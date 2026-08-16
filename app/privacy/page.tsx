@@ -20,8 +20,9 @@ export default function PrivacyPage() {
       </p>
       <p className="mt-4">
         The desktop application stores shop data locally on your computer
-        (SQLite). We do not host your invoices, customers, or inventory unless
-        you separately choose a future cloud option.
+        (SQLite). We do not host your invoices unless you add Cloud Protect, an
+        optional yearly backup add-on that stores encrypted copies you restore
+        with a recovery passphrase.
       </p>
       <p className="mt-4">
         WhatsApp chats are subject to Meta&apos;s WhatsApp privacy policy.

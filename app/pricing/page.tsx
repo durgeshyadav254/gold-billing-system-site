@@ -6,7 +6,7 @@ import { Check } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Pricing",
-  description: `RiseGold shop licence ${SITE.price} one-time. Optional priority support.`,
+  description: `RiseGold 30-day free trial, then Shop Licence ${SITE.price} one-time. Optional Cloud Protect and Priority Support.`,
 };
 
 export default function PricingPage() {
@@ -16,7 +16,7 @@ export default function PricingPage() {
         <SectionHeader
           eyebrow="Pricing"
           title={PRICING.headline}
-          subtitle="Pay once. Installer sent on WhatsApp after confirmation."
+          subtitle="Pay via WhatsApp / UPI. After a Shop Licence we send the installer link and an RGB1 key."
         />
         <div className="mt-16 grid gap-8 md:grid-cols-2">
           {PRICING.plans.map((plan) => (
@@ -34,7 +34,7 @@ export default function PricingPage() {
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2">
                     <span className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-gold-light via-gold to-gold-deep px-5 py-2 text-xs font-bold tracking-wider text-ink-dark uppercase shadow-lg">
                       <span className="h-1.5 w-1.5 rounded-full bg-ink-dark/30" />
-                      Most Popular
+                      {plan.badge ?? "Most Popular"}
                       <span className="h-1.5 w-1.5 rounded-full bg-ink-dark/30" />
                     </span>
                   </div>
@@ -67,15 +67,9 @@ export default function PricingPage() {
               </ul>
               <div className="relative mt-10">
                 <ButtonLink
-                  href={
-                    plan.id === "licence"
-                      ? "/buy/"
-                      : whatsappLink(
-                          `Hi RiseGold, I want Priority Support (₹999/year) for ${SITE.name}.`
-                        )
-                  }
-                  external={plan.id !== "licence"}
-                  variant={plan.featured ? "gold" : "outline"}
+                  href={plan.href}
+                  external={plan.external}
+                  variant={plan.variant}
                   className="w-full"
                 >
                   {plan.cta}
@@ -85,9 +79,9 @@ export default function PricingPage() {
           ))}
         </div>
         <p className="mx-auto mt-12 max-w-xl text-center text-sm text-muted">
-          Need a custom quote for multiple shops? Message{" "}
+          One Shop Licence is for one computer. Extra PCs or shops? Message{" "}
           <a
-            href={whatsappLink("Hi, I need multi-shop licences.")}
+            href={whatsappLink("Hi, I need extra Shop Licences for more PCs.")}
             className="font-medium text-lotus hover:underline"
             target="_blank"
             rel="noopener noreferrer"

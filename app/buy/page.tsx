@@ -8,14 +8,15 @@ import { MessageCircle } from "lucide-react";
 export const metadata: Metadata = {
   title: "Buy",
   description:
-    "Buy RiseGold jewellery billing software. Pay via WhatsApp and get the Windows installer.",
+    "Buy RiseGold Shop Licence. Pay via WhatsApp / UPI and receive the installer plus an RGB1 licence key.",
 };
 
 const steps = [
+  "Try 30 days free — download and install (no key).",
   "Tap WhatsApp or fill the form — share your shop name.",
-  "We share UPI / bank payment details.",
-  "After payment confirmation, you receive the installer link.",
-  "Install on Windows 10/11 and start billing the same day.",
+  "We share UPI / bank details for the Shop Licence.",
+  "After payment you receive the installer link and an RGB1 key.",
+  "Paste the key under Settings → License (or when you Save a bill).",
 ];
 
 export default function BuyPage() {
@@ -24,8 +25,8 @@ export default function BuyPage() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeader
           eyebrow="Purchase"
-          title="Buy RiseGold"
-          subtitle={`Licence ${SITE.price} · After payment we send the Windows installer download link on WhatsApp.`}
+          title="Buy a Shop Licence"
+          subtitle={`Licence ${SITE.price} one-time · After payment we send the Windows installer and an RGB1 key on WhatsApp.`}
         />
 
         <div className="mt-14 grid gap-12 lg:grid-cols-2">
@@ -69,8 +70,9 @@ export default function BuyPage() {
               <ul className="mt-3 space-y-2">
                 {[
                   "Windows installer (.exe)",
-                  "Full shop licence features",
+                  "RGB1 Shop Licence key (one PC)",
                   "WhatsApp setup help",
+                  "Optional Cloud Protect on the same key",
                 ].map((item) => (
                   <li key={item} className="flex items-center gap-2">
                     <span className="h-1.5 w-1.5 rounded-full bg-gold" />
@@ -78,9 +80,9 @@ export default function BuyPage() {
                   </li>
                 ))}
               </ul>
-              <p className="mt-5 text-ink">Already paid?</p>
+              <p className="mt-5 text-ink">Want to try first?</p>
               <ButtonLink href="/download/" variant="outline" className="mt-2">
-                Go to download page
+                Start 30-day trial
               </ButtonLink>
             </div>
           </div>

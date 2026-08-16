@@ -14,15 +14,19 @@ export default function TermsPage() {
       </h1>
       <div className="foil-line mt-6" />
       <p className="mt-8">
-        Purchasing a {SITE.name} shop licence grants you the right to install
-        and use the software on one Windows computer for your jewellery
-        business, unless otherwise agreed in writing.
+        A new install includes a free {SITE.trialDays}-day trial. Purchasing a{" "}
+        {SITE.name} Shop Licence grants you the right to install and use the
+        software on one Windows computer for your jewellery business, unless
+        otherwise agreed in writing. Activate with the RGB1 key we send after
+        payment.
       </p>
       <p className="mt-4">
         The software is provided as-is for billing assistance. You remain
         responsible for GST compliance, invoice accuracy, and backups of your
-        local database. We are not liable for business losses arising from
-        misuse, hardware failure, or failure to back up.
+        local database. Optional Cloud Protect stores encrypted backups you
+        control; it is sold separately and is not part of the trial. We are not
+        liable for business losses arising from misuse, hardware failure, or
+        failure to back up.
       </p>
       <p className="mt-4">
         Redistribution of the installer without permission is prohibited.

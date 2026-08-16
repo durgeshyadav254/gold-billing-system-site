@@ -17,7 +17,7 @@ export default function ContactPage() {
         <SectionHeader
           eyebrow="Contact"
           title="Talk to sales"
-          subtitle="Prefer WhatsApp for fastest reply. Or fill the form — it opens a pre-filled chat."
+          subtitle="Prefer WhatsApp for fastest reply — trial help, Shop Licence, Cloud Protect or Priority Support."
         />
         <div className="mt-14 grid gap-10 lg:grid-cols-2">
           <div className="space-y-5">
