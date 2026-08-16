@@ -1,4 +1,5 @@
 import { ButtonLink } from "@/components/shared/ButtonLink";
+import { BrandLogo } from "@/components/shared/BrandLogo";
 import { FeatureIcon } from "@/components/shared/FeatureIcon";
 import { SectionHeader } from "@/components/shared/SectionHeader";
 import { SITE, FEATURES, STEPS, PAINS, FAQS, whatsappLink } from "@/lib/site";
@@ -53,13 +54,18 @@ export default function HomePage() {
           {/* Signature: foil tax-invoice card */}
           <div className="invoice-sheet animate-rise delay-2 rounded-2xl p-6 sm:p-8">
             <div className="flex items-start justify-between gap-4">
-              <div>
-                <p className="font-display text-2xl font-semibold text-gold-light">
-                  RiseGold
-                </p>
-                <p className="mt-1 text-[10px] uppercase tracking-[0.2em] text-white/45">
-                  Tax Invoice Preview
-                </p>
+              <div className="flex items-center gap-3">
+                <span className="flex h-12 w-12 overflow-hidden rounded-xl border border-gold/40 bg-black">
+                  <BrandLogo height={48} className="h-12 w-12" />
+                </span>
+                <div>
+                  <p className="font-display text-2xl font-semibold text-gold-light">
+                    RiseGold
+                  </p>
+                  <p className="mt-1 text-[10px] uppercase tracking-[0.2em] text-white/45">
+                    Tax Invoice Preview
+                  </p>
+                </div>
               </div>
               <p className="font-mono text-xs text-white/50">INV-0126</p>
             </div>

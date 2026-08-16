@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { SITE, whatsappLink } from "@/lib/site";
+import { BrandLogo } from "@/components/shared/BrandLogo";
 
 const links = [
   { href: "/features/", label: "Features" },
@@ -19,12 +20,21 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-line/80 bg-canvas/85 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
-        <Link href="/" className="group flex items-baseline gap-2">
-          <span className="font-display text-2xl font-semibold tracking-tight text-ink">
-            Rise<span className="text-gold">Gold</span>
+        <Link
+          href="/"
+          className="group flex items-center gap-2.5"
+          aria-label="RiseGold home"
+        >
+          <span className="flex h-9 w-9 shrink-0 overflow-hidden rounded-lg border border-gold/30 bg-ink-dark shadow-sm">
+            <BrandLogo height={36} priority className="h-9 w-9" />
           </span>
-          <span className="hidden text-[10px] font-medium uppercase tracking-[0.18em] text-muted sm:inline">
-            Billing
+          <span className="flex flex-col leading-none">
+            <span className="font-display text-xl font-semibold tracking-tight text-ink sm:text-2xl">
+              Rise<span className="text-gold">Gold</span>
+            </span>
+            <span className="mt-0.5 hidden text-[10px] font-medium uppercase tracking-[0.18em] text-muted sm:block">
+              Billing
+            </span>
           </span>
         </Link>
 

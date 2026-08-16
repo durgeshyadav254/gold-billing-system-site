@@ -1,14 +1,20 @@
 import Link from "next/link";
 import { SITE, whatsappLink } from "@/lib/site";
+import { BrandLogo } from "@/components/shared/BrandLogo";
 
 export function Footer() {
   return (
     <footer className="border-t border-line bg-ink-dark text-paper">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-3">
         <div>
-          <p className="font-display text-3xl font-semibold">
-            Rise<span className="text-gold-light">Gold</span>
-          </p>
+          <div className="flex items-center gap-3">
+            <span className="flex h-11 w-11 overflow-hidden rounded-xl border border-gold/35 bg-black">
+              <BrandLogo height={44} className="h-11 w-11" />
+            </span>
+            <p className="font-display text-3xl font-semibold">
+              Rise<span className="text-gold-light">Gold</span>
+            </p>
+          </div>
           <p className="mt-3 max-w-xs text-sm leading-relaxed text-white/65">
             Offline jewellery billing for Indian gold shops — GST invoices,
             inventory, rates & reports on one Windows PC.

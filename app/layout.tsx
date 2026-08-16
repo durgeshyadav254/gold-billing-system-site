@@ -38,17 +38,24 @@ export const metadata: Metadata = {
     "offline gold shop software",
     "RiseGold",
   ],
+  icons: {
+    icon: [{ url: "/icon.png", type: "image/png" }],
+    apple: [{ url: "/icon.png" }],
+    shortcut: "/icon.png",
+  },
   openGraph: {
     title: `${SITE.name} — ${SITE.tagline}`,
     description: SITE.description,
     type: "website",
     locale: "en_IN",
     siteName: SITE.name,
+    images: [{ url: "/logo.png", width: 512, height: 512, alt: "RiseGold" }],
   },
   twitter: {
     card: "summary_large_image",
     title: `${SITE.name} — ${SITE.tagline}`,
     description: SITE.description,
+    images: ["/logo.png"],
   },
 };
 
