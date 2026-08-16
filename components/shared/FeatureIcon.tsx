@@ -24,10 +24,33 @@ const map: Record<string, LucideIcon> = {
 export function FeatureIcon({
   name,
   className = "h-5 w-5",
+  variant = "default",
 }: {
   name: string;
   className?: string;
+  variant?: "default" | "gold" | "outlined";
 }) {
   const Icon = map[name] || Receipt;
+
+  if (variant === "gold") {
+    return (
+      <span className="relative inline-flex">
+        <Icon
+          className={`${className} text-gold drop-shadow-[0_2px_4px_rgba(184,149,74,0.35)]`}
+          aria-hidden
+        />
+      </span>
+    );
+  }
+
+  if (variant === "outlined") {
+    return (
+      <Icon
+        className={`${className} text-gold-deep stroke-[1.6]`}
+        aria-hidden
+      />
+    );
+  }
+
   return <Icon className={className} aria-hidden />;
 }

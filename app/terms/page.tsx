@@ -7,9 +7,13 @@ export const metadata: Metadata = {
 
 export default function TermsPage() {
   return (
-    <article className="mx-auto max-w-3xl px-4 py-16 text-sm leading-relaxed text-muted sm:px-6">
-      <h1 className="font-display text-4xl font-semibold text-ink">Terms</h1>
-      <p className="mt-6">
+    <article className="mx-auto max-w-3xl px-4 py-16 text-sm leading-relaxed text-muted sm:px-6 sm:py-24">
+      <p className="text-label-luxury text-lotus">Legal</p>
+      <h1 className="font-display mt-3 text-4xl font-semibold text-ink">
+        Terms
+      </h1>
+      <div className="foil-line mt-6" />
+      <p className="mt-8">
         Purchasing a {SITE.name} shop licence grants you the right to install
         and use the software on one Windows computer for your jewellery
         business, unless otherwise agreed in writing.

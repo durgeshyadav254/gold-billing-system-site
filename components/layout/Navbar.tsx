@@ -18,32 +18,34 @@ export function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-line/80 bg-canvas/85 backdrop-blur-md">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
+    <header className="sticky top-0 z-50 border-b border-gold/15 bg-canvas/95">
+      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-gold to-transparent opacity-70" />
+      <div className="mx-auto flex h-[4.5rem] max-w-6xl items-center justify-between px-4 sm:px-6">
         <Link
           href="/"
-          className="group flex items-center gap-2.5"
+          className="group flex items-center gap-3"
           aria-label="RiseGold home"
         >
-          <span className="flex h-9 w-9 shrink-0 overflow-hidden rounded-lg border border-gold/30 bg-ink-dark shadow-sm">
-            <BrandLogo height={36} priority className="h-9 w-9" />
+          <span className="relative flex h-11 w-11 shrink-0 overflow-hidden rounded-xl border border-gold/40 bg-gradient-to-br from-ink-dark to-ink-darkest shadow-lg">
+            <span className="absolute top-0 left-0 h-3 w-3 rounded-tl-lg border-t-2 border-l-2 border-gold/50" />
+            <BrandLogo height={44} priority className="h-11 w-11" />
           </span>
           <span className="flex flex-col leading-none">
-            <span className="font-display text-xl font-semibold tracking-tight text-ink sm:text-2xl">
-              Rise<span className="text-gold">Gold</span>
+            <span className="font-display text-[1.4rem] font-semibold tracking-tight text-ink sm:text-2xl">
+              Rise<span className="gold-gradient-text">Gold</span>
             </span>
-            <span className="mt-0.5 hidden text-[10px] font-medium uppercase tracking-[0.18em] text-muted sm:block">
-              Billing
+            <span className="mt-0.5 hidden text-[9px] font-semibold uppercase tracking-[0.22em] text-gold sm:block">
+              Premium Billing
             </span>
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-7 md:flex">
+        <nav className="hidden items-center gap-8 md:flex">
           {links.map((l) => (
             <Link
               key={l.href}
               href={l.href}
-              className="text-sm font-medium text-muted transition hover:text-ink"
+              className="link-luxury text-sm font-medium text-muted transition hover:text-ink"
             >
               {l.label}
             </Link>
@@ -52,7 +54,7 @@ export function Navbar() {
             href={whatsappLink()}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-xl bg-lotus px-4 py-2 text-sm font-semibold text-white shadow-[0_10px_28px_-8px_#F6247752] transition hover:bg-lotus-hover"
+            className="btn-shine group relative rounded-xl bg-lotus px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-lotus/25 transition-all hover:bg-lotus-hover hover:shadow-xl hover:shadow-lotus/30"
           >
             WhatsApp · {SITE.whatsapp}
           </a>
@@ -69,7 +71,7 @@ export function Navbar() {
       </div>
 
       {open && (
-        <div className="border-t border-line bg-paper px-4 py-4 md:hidden">
+        <div className="border-t border-gold/15 bg-paper px-4 py-4 md:hidden">
           <div className="flex flex-col gap-3">
             {links.map((l) => (
               <Link

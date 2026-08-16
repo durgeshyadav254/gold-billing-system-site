@@ -18,11 +18,23 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## Host the Windows installer
 
-1. Copy your built installer to:
+Preferred: upload a **code-signed** Setup.exe to GCS, then point the site at that URL.
 
-   `public/downloads/RiseGold-Setup.exe`
+From the desktop app repo (`gold-billing-system`):
 
-2. Or host the file on Google Drive / Cloudflare R2 / S3 and set:
+```powershell
+$env:CSC_LINK = "D:\certs\risegold-codesign.pfx"
+$env:CSC_KEY_PASSWORD = "your-pfx-password"
+npm run package:release -- --upload
+```
+
+Bucket: `gs://rise-gold-billing-installer/`  
+Public URL is set in `lib/site.ts` → `SITE.downloadUrl` (or `NEXT_PUBLIC_DOWNLOAD_URL`).
+
+Local/static alternative:
+
+1. Copy your built installer to `public/downloads/RiseGold-Setup.exe`
+2. Or set:
 
 ```bash
 NEXT_PUBLIC_DOWNLOAD_URL=https://your-cdn.com/RiseGold-Setup.exe
@@ -30,6 +42,8 @@ NEXT_PUBLIC_SITE_URL=https://your-domain.com
 ```
 
 Buyers who have not paid yet are guided to WhatsApp. After payment you send them the download link (or unlock the public `/download/` page).
+
+If Windows shows SmartScreen (“protected your PC”), customers use **More info → Run anyway**. That warning is SmartScreen reputation, not Vercel/GCS. Signing the `.exe` before upload is the real fix.
 
 ## Sales flow
 

@@ -12,31 +12,33 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="py-16 sm:py-20">
+    <div className="py-16 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeader
           eyebrow="Contact"
           title="Talk to sales"
           subtitle="Prefer WhatsApp for fastest reply. Or fill the form — it opens a pre-filled chat."
         />
-        <div className="mt-12 grid gap-10 lg:grid-cols-2">
+        <div className="mt-14 grid gap-10 lg:grid-cols-2">
           <div className="space-y-5">
-            <div className="rounded-2xl border border-line bg-paper p-6">
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-gold-deep">
-                WhatsApp
+            <div className="rounded-2xl border-2 border-gold/30 bg-gradient-to-br from-paper to-gold-soft/20 p-8 shadow-xl shadow-gold/10">
+              <p className="text-[10px] font-bold tracking-[0.3em] text-gold-deep uppercase">
+                WhatsApp Sales
               </p>
-              <p className="font-mono mt-2 text-3xl font-semibold text-ink">
+              <p className="gold-gradient-text font-mono mt-3 text-4xl font-bold">
                 {SITE.whatsapp}
               </p>
+              <div className="foil-line my-5" />
               <ButtonLink
                 href={whatsappLink()}
                 external
-                className="mt-5"
+                variant="gold"
+                className="w-full"
               >
-                Open WhatsApp chat
+                Open WhatsApp Chat
               </ButtonLink>
             </div>
-            <div className="rounded-2xl border border-line bg-canvas-alt p-6 text-sm text-muted">
+            <div className="card-luxury p-6 text-sm text-muted">
               <p>
                 Email:{" "}
                 <a

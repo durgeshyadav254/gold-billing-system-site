@@ -1,77 +1,63 @@
 import type { Metadata } from "next";
-import { SITE, whatsappLink } from "@/lib/site";
+import { whatsappLink } from "@/lib/site";
 import { SectionHeader } from "@/components/shared/SectionHeader";
 import { ButtonLink } from "@/components/shared/ButtonLink";
-import { Download, Monitor, AlertCircle } from "lucide-react";
+import { InstallerVault } from "@/components/shared/InstallerVault";
+import { Monitor } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Download",
   description:
-    "Download RiseGold Windows installer after purchase. System requirements and setup steps.",
+    "Collect the RiseGold shop installer after purchase. System requirements and first-launch steps.",
 };
+
+const requirements = [
+  "Windows 10 or Windows 11 (64-bit)",
+  "~200 MB free disk space",
+  "Printer optional (A4 for tax invoices)",
+  "No internet needed after install",
+];
 
 export default function DownloadPage() {
   return (
-    <div className="py-16 sm:py-20">
+    <div className="py-16 sm:py-24">
       <div className="mx-auto max-w-3xl px-4 sm:px-6">
         <SectionHeader
-          eyebrow="Download"
-          title="Windows installer"
-          subtitle="Buyers receive the download link on WhatsApp after payment."
+          eyebrow="Counter vault"
+          title="Collect the shop installer"
+          subtitle="After payment we share this setup file on WhatsApp. Licensed shops can fetch it here."
         />
 
-        <div className="mt-10 rounded-2xl border border-line bg-paper p-6 sm:p-8">
-          <div className="flex items-start gap-3 rounded-xl bg-gold-soft/60 px-4 py-3 text-sm text-gold-deep">
-            <AlertCircle className="mt-0.5 h-4 w-4 shrink-0" />
-            <p>
-              Public download is unlocked after purchase confirmation. If you
-              already paid, ask for the link on WhatsApp{" "}
-              <a
-                href={whatsappLink(
-                  "Hi, I paid for RiseGold. Please send my installer download link."
-                )}
-                className="font-semibold underline"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {SITE.whatsapp}
-              </a>
-              .
-            </p>
-          </div>
+        <InstallerVault />
 
-          <a
-            href={SITE.downloadUrl}
-            className="mt-6 flex w-full items-center justify-center gap-2 rounded-xl bg-lotus px-5 py-4 text-sm font-semibold text-white shadow-[0_10px_28px_-8px_#F6247752] transition hover:bg-lotus-hover"
-          >
-            <Download size={18} />
-            Download RiseGold Setup (.exe)
-          </a>
-          <p className="mt-3 text-center text-xs text-muted">
-            Version 1.0.0 · Windows 64-bit installer
-          </p>
-        </div>
-
-        <div className="mt-8 rounded-2xl border border-line bg-canvas-alt p-6">
-          <div className="flex items-center gap-2 text-ink">
-            <Monitor size={18} className="text-gold" />
-            <h2 className="font-display text-2xl font-semibold">
-              System requirements
+        <div className="mt-10 rounded-2xl border border-gold/30 bg-gradient-to-br from-gold-soft/30 to-canvas-alt p-7">
+          <div className="flex items-center gap-3">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gold/10">
+              <Monitor size={20} className="text-gold" />
+            </div>
+            <h2 className="font-display text-2xl font-semibold text-ink">
+              What the laptop needs
             </h2>
           </div>
-          <ul className="mt-4 space-y-2 text-sm text-muted">
-            <li>Windows 10 or Windows 11 (64-bit)</li>
-            <li>~200 MB free disk space</li>
-            <li>Printer optional (A4 for tax invoices)</li>
-            <li>No internet needed after install</li>
+          <ul className="mt-5 space-y-3">
+            {requirements.map((req) => (
+              <li
+                key={req}
+                className="flex items-center gap-3 text-sm text-muted"
+              >
+                <span className="h-1.5 w-1.5 rounded-full bg-gold" />
+                {req}
+              </li>
+            ))}
           </ul>
         </div>
 
-        <div className="mt-8 space-y-3 text-sm text-muted">
+        <div className="mt-10 space-y-3 text-sm text-muted">
           <h2 className="font-display text-2xl font-semibold text-ink">
-            First launch
+            First bill on day one
           </h2>
-          <ol className="list-decimal space-y-2 pl-5">
+          <div className="gold-rule mx-0" />
+          <ol className="mt-4 list-decimal space-y-2 pl-5">
             <li>Run the installer and open RiseGold Billing.</li>
             <li>Enter shop name and create a 4–8 digit PIN.</li>
             <li>Settings → Shop: add GSTIN, address, bank details.</li>
@@ -79,7 +65,7 @@ export default function DownloadPage() {
           </ol>
         </div>
 
-        <div className="mt-10 flex flex-wrap gap-3">
+        <div className="mt-12 flex flex-wrap gap-3">
           <ButtonLink href="/buy/">Buy licence first</ButtonLink>
           <ButtonLink href={whatsappLink()} variant="outline" external>
             WhatsApp support

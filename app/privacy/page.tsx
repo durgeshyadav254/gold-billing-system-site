@@ -7,9 +7,13 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <article className="mx-auto max-w-3xl px-4 py-16 text-sm leading-relaxed text-muted sm:px-6">
-      <h1 className="font-display text-4xl font-semibold text-ink">Privacy</h1>
-      <p className="mt-6">
+    <article className="mx-auto max-w-3xl px-4 py-16 text-sm leading-relaxed text-muted sm:px-6 sm:py-24">
+      <p className="text-label-luxury text-lotus">Legal</p>
+      <h1 className="font-display mt-3 text-4xl font-semibold text-ink">
+        Privacy
+      </h1>
+      <div className="foil-line mt-6" />
+      <p className="mt-8">
         {SITE.name} marketing website does not require an account. Lead forms
         open WhatsApp with the details you typed — we do not store form data on
         this website&apos;s servers (static site).

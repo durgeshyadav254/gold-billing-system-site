@@ -11,46 +11,61 @@ export const metadata: Metadata = {
 
 export default function PricingPage() {
   return (
-    <div className="py-16 sm:py-20">
+    <div className="py-16 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeader
           eyebrow="Pricing"
           title={PRICING.headline}
           subtitle="Pay once. Installer sent on WhatsApp after confirmation."
         />
-        <div className="mt-14 grid gap-6 md:grid-cols-2">
+        <div className="mt-16 grid gap-8 md:grid-cols-2">
           {PRICING.plans.map((plan) => (
             <article
               key={plan.id}
-              className={`rounded-2xl border p-7 sm:p-8 ${
+              className={`relative p-8 sm:p-10 ${
                 plan.featured
-                  ? "border-lotus/40 bg-paper shadow-[0_24px_60px_-30px_#F6247755]"
-                  : "border-line bg-canvas-alt"
+                  ? "card-featured"
+                  : "card-luxury bg-canvas-alt"
               }`}
             >
               {plan.featured && (
-                <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-lotus">
-                  Most popular
-                </p>
+                <>
+                  <div className="pointer-events-none absolute -inset-px rounded-2xl bg-gradient-to-r from-gold-light via-gold to-gold-deep opacity-20 blur-sm" />
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2">
+                    <span className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-gold-light via-gold to-gold-deep px-5 py-2 text-xs font-bold tracking-wider text-ink-dark uppercase shadow-lg">
+                      <span className="h-1.5 w-1.5 rounded-full bg-ink-dark/30" />
+                      Most Popular
+                      <span className="h-1.5 w-1.5 rounded-full bg-ink-dark/30" />
+                    </span>
+                  </div>
+                </>
               )}
-              <h2 className="font-display text-3xl font-semibold text-ink">
+              <h2 className="font-display relative text-3xl font-semibold text-ink">
                 {plan.name}
               </h2>
-              <p className="mt-4">
-                <span className="font-mono text-4xl font-semibold text-ink">
+              <p className="relative mt-6">
+                <span
+                  className={`font-display text-5xl font-bold ${
+                    plan.featured ? "gold-gradient-text" : "text-ink"
+                  }`}
+                >
                   {plan.price}
                 </span>
                 <span className="ml-2 text-sm text-muted">{plan.period}</span>
               </p>
-              <ul className="mt-6 space-y-3">
+              <ul className="relative mt-8 space-y-4">
                 {plan.features.map((f) => (
-                  <li key={f} className="flex gap-2 text-sm text-ink">
-                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-success" />
+                  <li key={f} className="flex gap-3 text-sm text-ink">
+                    <Check
+                      className={`mt-0.5 h-5 w-5 shrink-0 ${
+                        plan.featured ? "text-gold" : "text-success"
+                      }`}
+                    />
                     {f}
                   </li>
                 ))}
               </ul>
-              <div className="mt-8">
+              <div className="relative mt-10">
                 <ButtonLink
                   href={
                     plan.id === "licence"
@@ -60,7 +75,7 @@ export default function PricingPage() {
                         )
                   }
                   external={plan.id !== "licence"}
-                  variant={plan.featured ? "lotus" : "outline"}
+                  variant={plan.featured ? "gold" : "outline"}
                   className="w-full"
                 >
                   {plan.cta}
@@ -69,7 +84,7 @@ export default function PricingPage() {
             </article>
           ))}
         </div>
-        <p className="mx-auto mt-10 max-w-xl text-center text-sm text-muted">
+        <p className="mx-auto mt-12 max-w-xl text-center text-sm text-muted">
           Need a custom quote for multiple shops? Message{" "}
           <a
             href={whatsappLink("Hi, I need multi-shop licences.")}

@@ -10,11 +10,12 @@ type Props = {
 
 const styles = {
   lotus:
-    "bg-lotus text-white shadow-[0_10px_28px_-8px_#F6247752] hover:bg-lotus-hover",
-  gold: "bg-gold text-ink hover:bg-gold-light",
+    "btn-shine bg-gradient-to-b from-lotus to-lotus-hover text-white shadow-[0_10px_28px_-8px_#F6247752] hover:-translate-y-0.5 hover:shadow-[0_16px_36px_-10px_#F6247766]",
+  gold: "btn-shine btn-gold-metal",
   outline:
-    "border border-gold/50 bg-transparent text-ink hover:border-gold hover:bg-gold-soft/40",
-  ghost: "bg-white/10 text-paper hover:bg-white/15",
+    "border-2 border-gold/55 bg-transparent text-gold-deep hover:border-gold hover:bg-gold/10",
+  ghost:
+    "bg-white/10 text-paper backdrop-blur-sm hover:bg-white/15 hover:shadow-[0_12px_28px_-12px_rgba(184,149,74,0.45)]",
 };
 
 export function ButtonLink({

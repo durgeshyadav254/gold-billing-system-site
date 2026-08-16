@@ -38,7 +38,7 @@ export function LeadForm({ intent = "buy" }: Props) {
   return (
     <form
       onSubmit={onSubmit}
-      className="rounded-2xl border border-line bg-paper p-6 shadow-sm sm:p-8"
+      className="gold-corners relative rounded-2xl border border-gold/25 bg-paper p-6 shadow-xl shadow-gold/5 sm:p-8"
     >
       <div className="grid gap-4 sm:grid-cols-2">
         <label className="block text-sm">
@@ -47,7 +47,7 @@ export function LeadForm({ intent = "buy" }: Props) {
             required
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="w-full rounded-xl border border-line bg-canvas px-3.5 py-2.5 text-ink outline-none transition focus:border-lotus"
+            className="input-luxury"
             placeholder="Ramesh Sharma"
           />
         </label>
@@ -57,7 +57,7 @@ export function LeadForm({ intent = "buy" }: Props) {
             required
             value={shop}
             onChange={(e) => setShop(e.target.value)}
-            className="w-full rounded-xl border border-line bg-canvas px-3.5 py-2.5 text-ink outline-none transition focus:border-lotus"
+            className="input-luxury"
             placeholder="Sharma Jewellers"
           />
         </label>
@@ -69,7 +69,7 @@ export function LeadForm({ intent = "buy" }: Props) {
             required
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
-            className="w-full rounded-xl border border-line bg-canvas px-3.5 py-2.5 text-ink outline-none transition focus:border-lotus"
+            className="input-luxury"
             placeholder="98XXXXXXXX"
           />
         </label>
@@ -78,7 +78,7 @@ export function LeadForm({ intent = "buy" }: Props) {
           <input
             value={city}
             onChange={(e) => setCity(e.target.value)}
-            className="w-full rounded-xl border border-line bg-canvas px-3.5 py-2.5 text-ink outline-none transition focus:border-lotus"
+            className="input-luxury"
             placeholder="Gorakhpur"
           />
         </label>
@@ -88,16 +88,21 @@ export function LeadForm({ intent = "buy" }: Props) {
             rows={3}
             value={note}
             onChange={(e) => setNote(e.target.value)}
-            className="w-full resize-y rounded-xl border border-line bg-canvas px-3.5 py-2.5 text-ink outline-none transition focus:border-lotus"
+            className="input-luxury resize-y"
             placeholder="I want to buy the shop licence / need a demo…"
           />
         </label>
       </div>
       <button
         type="submit"
-        className="mt-6 w-full rounded-xl bg-lotus px-5 py-3.5 text-sm font-semibold text-white shadow-[0_10px_28px_-8px_#F6247752] transition hover:bg-lotus-hover sm:w-auto"
+        className="btn-shine group relative mt-6 w-full rounded-xl bg-gradient-to-b from-lotus to-lotus-hover px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-lotus/30 transition-all hover:shadow-xl hover:shadow-lotus/40 sm:w-auto"
       >
-        Send on WhatsApp →
+        <span className="relative z-10 flex items-center justify-center gap-2">
+          Send on WhatsApp
+          <span className="transition-transform group-hover:translate-x-1">
+            →
+          </span>
+        </span>
       </button>
       <p className="mt-3 text-xs text-muted">
         Opens WhatsApp chat with{" "}

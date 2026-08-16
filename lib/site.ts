@@ -13,6 +13,14 @@ export const SITE = {
     "https://storage.googleapis.com/rise-gold-billing-installer/Rise%20Gold%20Billing-Setup-1.0.0.exe",
   price: "₹4,999",
   priceNote: "One-time licence · Lifetime updates for v1",
+  installer: {
+    version: "1.0.0",
+    edition: "Shop licence",
+    platform: "Windows 10 / 11",
+    arch: "64-bit",
+    filename: "RiseGold-Setup.exe",
+    released: "August 2026",
+  },
 } as const;
 
 export function whatsappLink(message?: string): string {
@@ -183,6 +191,10 @@ export const FAQS = [
   {
     q: "Which computers are supported?",
     a: "Windows 10 or 11, 64-bit. About 200 MB free disk space.",
+  },
+  {
+    q: "Windows says “protected your PC” — is the download unsafe?",
+    a: "That is Microsoft Defender SmartScreen for new or rarely downloaded apps, not a virus. Click More info → Run anyway. Signed builds show our verified publisher name instead of Unknown publisher.",
   },
   {
     q: "Is GST included in invoices?",

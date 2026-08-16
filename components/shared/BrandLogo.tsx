@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 type Props = {
   /** Height in px — width scales with object-contain */
   height?: number;
@@ -11,8 +9,7 @@ type Props = {
 
 /**
  * RiseGold company logo.
- * mark = /icon.png (square R)
- * full = /logo.png (same asset family; use for larger brand moments)
+ * Uses /logo.png (public) to avoid conflict with Next.js app/icon.png favicon route.
  */
 export function BrandLogo({
   height = 36,
@@ -20,16 +17,18 @@ export function BrandLogo({
   variant = "mark",
   priority = false,
 }: Props) {
-  const src = variant === "full" ? "/logo.png" : "/icon.png";
   const width = Math.round(height * (variant === "full" ? 1.2 : 1));
 
   return (
-    <Image
-      src={src}
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src="/logo.png"
       alt="RiseGold"
       width={width}
       height={height}
-      priority={priority}
+      decoding="async"
+      loading={priority ? "eager" : "lazy"}
+      fetchPriority={priority ? "high" : "auto"}
       className={`object-contain ${className}`}
     />
   );

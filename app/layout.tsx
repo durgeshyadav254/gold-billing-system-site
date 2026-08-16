@@ -9,7 +9,7 @@ import { SITE } from "@/lib/site";
 const display = Cormorant_Garamond({
   variable: "--font-display",
   subsets: ["latin"],
-  weight: ["500", "600", "700"],
+  weight: ["400", "500", "600", "700"],
 });
 
 const body = DM_Sans({
@@ -39,9 +39,9 @@ export const metadata: Metadata = {
     "RiseGold",
   ],
   icons: {
-    icon: [{ url: "/icon.png", type: "image/png" }],
-    apple: [{ url: "/icon.png" }],
-    shortcut: "/icon.png",
+    icon: [{ url: "/logo.png", type: "image/png" }],
+    apple: [{ url: "/logo.png" }],
+    shortcut: "/logo.png",
   },
   openGraph: {
     title: `${SITE.name} — ${SITE.tagline}`,

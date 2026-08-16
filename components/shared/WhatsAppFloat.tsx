@@ -7,11 +7,15 @@ export function WhatsAppFloat() {
       href={whatsappLink()}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-5 right-5 z-50 flex items-center gap-2 rounded-full bg-[#25D366] px-4 py-3 text-sm font-semibold text-white shadow-lg transition hover:scale-[1.03] hover:shadow-xl"
+      className="group fixed right-6 bottom-6 z-50 flex items-center gap-3 rounded-full bg-[#25D366] px-5 py-3.5 text-sm font-semibold text-white shadow-xl shadow-[#25D366]/30 transition hover:scale-[1.02] hover:shadow-2xl hover:shadow-[#25D366]/40"
       aria-label={`WhatsApp ${SITE.whatsapp}`}
     >
-      <MessageCircle size={20} />
-      <span className="hidden sm:inline">Buy · {SITE.whatsapp}</span>
+      <span className="absolute inset-0 rounded-full bg-[#25D366] opacity-0" />
+      <MessageCircle size={22} className="relative z-10" />
+      <span className="relative z-10 hidden sm:inline">
+        Buy · {SITE.whatsapp}
+      </span>
+      <span className="absolute -top-1 -right-1 h-3 w-3 rounded-full border-2 border-white bg-gold" />
     </a>
   );
 }
