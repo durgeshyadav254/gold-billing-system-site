@@ -9,9 +9,8 @@ export const SITE = {
   whatsapp: "7054392173",
   whatsappE164: "917054392173",
   email: "support@risegold.in",
-  /** Host the .exe on Vercel public/downloads or any CDN and set this env */
   downloadUrl:
-    process.env.NEXT_PUBLIC_DOWNLOAD_URL || "/downloads/RiseGold-Setup.exe",
+    "https://storage.googleapis.com/rise-gold-billing-installer/Rise%20Gold%20Billing-Setup-1.0.0.exe",
   price: "₹4,999",
   priceNote: "One-time licence · Lifetime updates for v1",
 } as const;

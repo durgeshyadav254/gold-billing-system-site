@@ -17,7 +17,7 @@ export default function DownloadPage() {
         <SectionHeader
           eyebrow="Download"
           title="Windows installer"
-          subtitle="Buyers receive the download link on WhatsApp after payment. You can also host the .exe under /downloads/."
+          subtitle="Buyers receive the download link on WhatsApp after payment."
         />
 
         <div className="mt-10 rounded-2xl border border-line bg-paper p-6 sm:p-8">
@@ -48,10 +48,7 @@ export default function DownloadPage() {
             Download RiseGold Setup (.exe)
           </a>
           <p className="mt-3 text-center text-xs text-muted">
-            File path: <span className="font-mono">{SITE.downloadUrl}</span>
-            <br />
-            Upload your installer to{" "}
-            <span className="font-mono">public/downloads/</span> before go-live.
+            Version 1.0.0 · Windows 64-bit installer
           </p>
         </div>
 
